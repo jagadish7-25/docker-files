@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>St. Grace Church — Home</title>
+  <style>
+    :root{
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.7);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:#111827}
+    /* Background SVG sits behind everything */
+    .bg-art{
+      position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.12;display:flex;align-items:center;justify-content:center;
+    }
+    /* Main layout */
+    .site{
+      position:relative;z-index:5;max-width:1100px;margin:0 auto;padding:28px;min-height:100vh;box-sizing:border-box;
+      display:flex;flex-direction:column;gap:24px;
+    }
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#81b0ff);border-radius:10px;color:white;font-weight:700}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+      border-radius:14px;padding:36px;box-shadow:0 6px 20px rgba(11,15,26,0.08);display:flex;gap:24px;align-items:center;flex-wrap:wrap
+    }
+    .hero-text{flex:1;min-width:240px}
+    .eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.08em}
+    h1{margin:6px 0 8px;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .cta{display:inline-block;padding:10px 18px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    .secondary{background:transparent;border:1px solid #e6eefc;padding:10px 16px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:700}
+    .card-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(11,15,26,0.04)}
+    .mass-list{display:flex;flex-direction:column;gap:10px}
+    .mass-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;background:linear-gradient(90deg,rgba(200,220,255,0.14),transparent)}
+    footer{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid #e6eefc;color:var(--muted);flex-wrap:wrap;gap:12px}
+    /* Responsive */
+    @media (max-width:880px){
+      .card-grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav a{margin-left:8px}
+    }
+    /* Contact form simple styles */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,button{font:inherit;padding:10px;border-radius:8px;border:1px solid #e6eefc}
+    textarea{min-height:110px}
+    .muted{color:var(--muted);font-size:13px}
+    .donate{background:linear-gradient(90deg,#f97316,#fb923c);color:white;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <!-- Line-art background (SVG) -->
+  <div class="bg-art" aria-hidden="true">
+    <!-- Inline SVG of a simple church line-art. You can replace paths with your preferred illustrator output. -->
+    <svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line art of church building">
+      <g fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- steeple -->
+        <path d="M450 10 L480 80 L420 80 Z" />
+        <rect x="430" y="80" width="40" height="80" />
+        <!-- main roof -->
+        <path d="M120 160 L450 60 L780 160" />
+        <!-- walls -->
+        <rect x="140" y="160" width="520" height="180" />
+        <!-- doors and windows -->
+        <rect x="420" y="220" width="60" height="120" />
+        <path d="M360 220 v-40 a40 40 0 0 1 80 0 v40" />
+        <line x1="250" y1="220" x2="250" y2="300" />
+        <line x1="650" y1="220" x2="650" y2="300" />
+        <!-- small cross -->
+        <path d="M450 36 v12 M442 44 h16" />
+        <!-- decorative lines -->
+        <path d="M140 300 q200 -40 520 0" stroke-opacity="0.7" />
+      </g>
+    </svg>
+  </div>
+
+  <main class="site" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SG</div>
+        <div>
+          <div style="font-weight:800">St. Grace Church</div>
+          <div class="muted" style="font-size:13px">A welcoming community</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#mass">Mass Times</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="donate">Donate</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-text">
+        <div class="eyebrow">Welcome</div>
+        <h1 id="hero-heading">St. Grace Church — A place to belong</h1>
+        <p class="lead">Join us for worship, fellowship and service. We welcome people from all walks of life and lovingly serve our neighbourhood through outreach, music and care.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="cta" href="#mass">See Mass Times</a>
+          <a class="secondary" href="#events">Upcoming Events</a>
+        </div>
+      </div>
+      <div style="width:320px;min-width:220px">
+        <div class="card" aria-hidden="false">
+          <h3 style="margin-top:0">Next Service</h3>
+          <p class="muted">Sunday Worship — 10:00 AM</p>
+          <p style="margin:8px 0 0;">Contemporary music, children program and community tea after service.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="card-grid">
+      <section class="card" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Us</h2>
+        <p class="muted">St. Grace Church has been serving the community for over 75 years. We run weekly services, youth programs, food drives and counseling. All are welcome.</p>
+        <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:160px">
+            <strong>Location</strong>
+            <p class="muted">123 Church Lane, Your City</p>
+          </div>
+          <div style="flex:1;min-width:160px">
+            <strong>Office Hours</strong>
+            <p class="muted">Mon — Fri, 9:00 AM — 4:00 PM</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card" id="mass" aria-labelledby="mass-heading">
+        <h3 id="mass-heading">Mass Times</h3>
+        <div class="mass-list">
+          <div class="mass-item"><div>Sunday</div><div>10:00 AM &middot; 6:00 PM</div></div>
+          <div class="mass-item"><div>Saturday Vigil</div><div>6:00 PM</div></div>
+          <div class="mass-item"><div>Weekdays</div><div>7:00 AM</div></div>
+          <div class="mass-item"><div>Confession</div><div>Sat 4:30 — 5:30 PM</div></div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" id="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
+      <ul>
+        <li><strong>Community Meal</strong> — 2nd Saturday of the month</li>
+        <li><strong>Choir Practice</strong> — Wednesdays, 6:30 PM</li>
+        <li><strong>Volunteer Drive</strong> — Contact the office to sign up</li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Us</h2>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px">
+          <p class="muted">Phone: (555) 123-4567<br/>Email: hello@stgrace.example</p>
+          <p class="muted">Or send us a message:</p>
+        </div>
+        <div style="flex:1;min-width:260px">
+          <form onsubmit="event.preventDefault();alert('This is a demo form. Replace with your backend endpoint.');">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" style="background:var(--accent);color:white;border:none;padding:10px;border-radius:8px;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <strong>St. Grace Church</strong> <span class="muted">— Bringing hope since 1949</span></div>
+      <div class="muted">Made with care • Privacy • Terms</div>
+    </footer>
+  </main>
+
+</body>
+</html>
