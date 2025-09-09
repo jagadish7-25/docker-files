@@ -19,8 +19,7 @@ services:
     image: kadapajag7/frontend:v2
     container_name: frontend
     ports:
-      - "80:80"
+      - 80:80
     depends_on:
       - backend
-    networks:
-      - expense
+    
