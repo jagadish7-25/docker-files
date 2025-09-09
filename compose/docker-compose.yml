@@ -15,7 +15,7 @@ services:
     depends_on:
       - mysql
   frontend:
-    image: kadapajag7/expense-frontend:v2
+    image: kadapajag7/frontend:v2
     container_name: frontend
     ports:
       - "80:80"
