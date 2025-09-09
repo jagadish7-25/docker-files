@@ -1,0 +1,25 @@
+version: "3"
+networks:
+  expense:
+volumes:
+  mysql:
+services:
+  mysql:
+    image: kadapajag7/mysql:v2
+    container_name: mysql
+    volumes:
+      - mysql:/var/lib/mysql
+  backend:
+    image: kadapajag7/expense-backend:v2
+    container_name: backend
+    depends_on:
+      - mysql
+  frontend:
+    image: kadapajag7/expense-frontend:v2
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - expense
