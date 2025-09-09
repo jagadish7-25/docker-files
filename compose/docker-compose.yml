@@ -10,7 +10,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
   backend:
-    image: kadapajag7/expense-backend:v2
+    image: kadapajag7/backend:v2
     container_name: backend
     depends_on:
       - mysql
